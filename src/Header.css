@@ -1,0 +1,18 @@
+#header-div {
+    display: flex;
+    background-color: lightsteelblue;
+    padding: 1rem;
+    justify-content: space-evenly;
+}
+
+#logo {
+    font-size: 2rem;
+}
+
+#logo-div {
+    background-color: orange;
+}
+
+.header-links {
+    margin-left: 1rem;
+}

@@ -1,26 +1,46 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import './Header.css'
+import './Body.css'
+import './AuthorSearch.css'
+import { Component } from 'react';
+import Header from './components/Header'
+import Body from './components/Body'
+import AuthorSearch from './components/AuthorSearch'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      books: []
+    }
+  }
+
+  componentDidMount() {
+    this.fetchBooks()
+  }
+
+  fetchBooks = () => {
+    fetch('https://raw.githubusercontent.com/benoitvallon/100-best-books/master/books.json')
+    .then(response => response.json())
+    .then(json => {
+      this.setState({
+        books: json.slice(0, 4)
+      })
+    })
+  }
+
+  render() {
+    return(<>
+        <Header />
+        <div className="main-container">
+          <AuthorSearch />
+          <Body books={this.state.books}/>
+        </div>
+    </>)
+  }
 }
 
 export default App;

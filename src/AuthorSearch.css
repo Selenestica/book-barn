@@ -1,0 +1,22 @@
+.author-search-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-div {
+    padding: 0.7rem 15rem;
+    background-color: antiquewhite;
+}
+
+.author-text-box {
+ width: 20rem;
+ height: 2rem;
+}
+
+.author-text-box::-webkit-input-placeholder {
+    font-size: 1.2rem;
+}
+
+#author-search-button {
+    padding: 0.7rem;
+}

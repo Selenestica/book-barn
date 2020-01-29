@@ -28,6 +28,12 @@ app.post('/add-book', (req, res) => {
     book.save().then(savedBook => res.redirect('/'))
 })
 
+app.get('/view-books', (req,res) => {
+    models.Book.findAll().then((result)=> {
+        res.json({result:result})
+    })
+})
+
 app.listen(PORT, () => {
     console.log("Server started. XD")
 })

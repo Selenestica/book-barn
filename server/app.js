@@ -34,6 +34,7 @@ app.get('/view-books', (req,res) => {
     })
 })
 
+
 app.post('/update-book/:id', (req, res) => {
     models.Book.update({
         title: req.body.title,
@@ -44,6 +45,13 @@ app.post('/update-book/:id', (req, res) => {
     }, {
         where: 
         {id: req.params.id}
+
+app.post('/delete-book/:id', (req, res) => {
+    models.Book.destroy({
+        where: {
+            id: req.params.id
+        }
+
     })
 })
 

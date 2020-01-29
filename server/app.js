@@ -45,6 +45,8 @@ app.post('/update-book/:id', (req, res) => {
     }, {
         where: 
         {id: req.params.id}
+    })
+})
 
 app.post('/delete-book/:id', (req, res) => {
     models.Book.destroy({

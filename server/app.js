@@ -34,6 +34,14 @@ app.get('/view-books', (req,res) => {
     })
 })
 
+app.post('/delete-book/:id', (req, res) => {
+    models.Book.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+})
+
 app.listen(PORT, () => {
     console.log("Server started. XD")
 })

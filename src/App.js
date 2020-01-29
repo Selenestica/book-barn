@@ -23,11 +23,11 @@ class App extends Component {
   }
 
   fetchBooks = () => {
-    fetch('https://raw.githubusercontent.com/benoitvallon/100-best-books/master/books.json')
+    fetch('http://localhost:4000/view-books')
     .then(response => response.json())
     .then(json => {
       this.setState({
-        books: json.slice(0, 4)
+        books: json.result
       })
     })
   }

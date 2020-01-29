@@ -34,6 +34,11 @@ app.get('/view-books', (req,res) => {
     })
 })
 
+app.get('/view-books/:genre', (req,res) => {
+    models.Book.findAll({where: {genre: req.params.genre}}).then((result)=> {
+        res.json({result:result})
+    })
+})
 
 app.post('/update-book/:id', (req, res) => {
     models.Book.update({
@@ -53,7 +58,6 @@ app.post('/delete-book/:id', (req, res) => {
         where: {
             id: req.params.id
         }
-
     })
 })
 

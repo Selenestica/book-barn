@@ -8,7 +8,7 @@ class Body extends Component {
             return (<>
             <div className="books-div">
                 <div className="img-div">
-                    <img src="book-image.jpeg" />
+                    <img src="book-image.jpeg" alt="book" />
                 </div>
                 <div className="book-title-div" key={`${book.pages}${book.author}${book.title}${book.link}`}>   
                     <p>{book.title}</p>
